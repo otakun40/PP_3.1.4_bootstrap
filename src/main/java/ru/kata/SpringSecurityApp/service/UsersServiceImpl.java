@@ -53,8 +53,8 @@ public class UsersServiceImpl implements UsersService, UserDetailsService {
     }
 
     @Override
-    public User getUserByUsername(String username) {
-        return usersRepository.getUserByUsername(username);
+    public User getUserByEmail(String email) {
+        return usersRepository.getUserByEmail(email);
     }
 
     @Transactional
@@ -64,8 +64,9 @@ public class UsersServiceImpl implements UsersService, UserDetailsService {
         if (userBuId.isPresent()) {
             User userFromDB = userBuId.get();
             userFromDB.setId(user.getId());
-            userFromDB.setUsername(user.getUsername());
-            userFromDB.setName(user.getName());
+            userFromDB.setFirstName(user.getFirstName());
+            userFromDB.setLastName(user.getLastName());
+            userFromDB.setAge(user.getAge());
             userFromDB.setEmail(user.getEmail());
             userFromDB.setRoles(user.getRoles());
             user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
@@ -82,10 +83,10 @@ public class UsersServiceImpl implements UsersService, UserDetailsService {
 
     @Override
     @Transactional
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = getUserByUsername(username);
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = getUserByEmail(email);
         if (user == null) {
-            throw new UsernameNotFoundException(String.format("User %s not found", username));
+            throw new UsernameNotFoundException(String.format("User %s not found", email));
         }
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
                 mapRolesToAuthorities(user.getRoles()));

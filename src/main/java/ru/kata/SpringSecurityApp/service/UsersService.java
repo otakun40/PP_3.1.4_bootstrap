@@ -10,7 +10,7 @@ public interface UsersService {
 
     User getUserById(Long id);
 
-    User getUserByUsername(String username);
+    User getUserByEmail(String email);
 
     void updateUser(User user);
 

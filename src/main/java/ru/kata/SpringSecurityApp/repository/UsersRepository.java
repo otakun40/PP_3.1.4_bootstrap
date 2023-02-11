@@ -6,5 +6,5 @@ import ru.kata.SpringSecurityApp.model.User;
 
 @Repository
 public interface UsersRepository extends JpaRepository<User, Long> {
-    User getUserByUsername(String username);
+    User getUserByEmail(String email);
 }

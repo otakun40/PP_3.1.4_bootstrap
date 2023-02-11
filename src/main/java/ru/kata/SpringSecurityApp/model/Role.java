@@ -48,6 +48,6 @@ public class Role implements GrantedAuthority, Serializable {
 
     @Override
     public String toString() {
-        return name;
+        return name.substring(name.indexOf('_') + 1);
     }
 }
