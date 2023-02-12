@@ -79,7 +79,9 @@
 
 <!--                                        EDIT BUTTON-->
                                         <td>
-                                            <a type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal"
+                                            <a type="button" class="btn btn-sm btn-default" style="
+                                               background-color: lightseagreen; color: white"
+                                               data-bs-toggle="modal"
                                                data-bs-target="#editModal"
                                                th:data-bs-target="${'#editModal'+currentUser.id}">Edit</a>
                                         </td>
@@ -110,42 +112,42 @@
                                                             <label for="firstname-edit"><b>Name</b></label>
                                                             <input th:name="firstName" th:type="text"
                                                                    class="form-control" id="firstname-edit"
-                                                                   th:value="*{firstName}"/>
+                                                                   th:value="*{firstName}"required/>
                                                             <br>
                                                             <label for="lastname-edit"><b>Surname</b></label>
                                                             <input th:name="lastName" th:type="text"
                                                                    class="form-control" id="lastname-edit"
-                                                                   th:value="*{lastName}"/>
+                                                                   th:value="*{lastName}"required/>
                                                             <br>
                                                             <label for="age-edit"><b>Age</b></label>
                                                             <input th:name="age" th:type="number"
                                                                    class="form-control" id="age-edit"
-                                                                   th:value="*{age}"/>
+                                                                   th:value="*{age}"required/>
                                                             <br>
                                                             <label for="email-edit"><b>Email</b></label>
                                                             <input th:name="email" th:type="text"
                                                                    class="form-control" id="email-edit"
-                                                                   th:value="*{email}"/>
+                                                                   th:value="*{email}"required/>
                                                             <br>
 
                                                             <label for="password-edit"><b>Password</b></label>
                                                             <input th:name="password" type="password"
                                                                    class="form-control" id="password-edit"
-                                                                   th:value="*{password}"/>
+                                                                   th:value="*{password}" required/>
                                                             <br>
                                                             <label for="update_roles"><b>Role</b></label>
-                                                            <select multiple class="form-control form-control-sm" id="update_roles" name="update_roles" size="2" required>
+                                                            <select multiple class="form-control form-control-sm" id="update_roles" name="update_roles" size="2">
                                                                 <option>ADMIN</option>
                                                                 <option>USER</option>
                                                             </select>
                                                             <br><br>
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="submit" class="btn btn-primary">
-                                                                Edit
-                                                            </button>
                                                             <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Close
+                                                            </button>
+                                                            <button type="submit" class="btn btn-primary">
+                                                                Edit
                                                             </button>
                                                         </div>
                                                     </form>

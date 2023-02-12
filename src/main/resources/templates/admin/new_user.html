@@ -57,24 +57,19 @@
                                   method="POST">
                                 <label for="firstname"><b>First name</b></label>
                                 <input th:name="firstname" th:type="text" th:field="*{firstName}" class="form-control" id="firstname" required/>
-                                <div style="color:#ff0000" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Firstname error</div>
                                 <br>
                                 <label for="lastname"><b>Last name</b></label>
                                 <input th:name="lastname" th:type="text" th:field="*{lastName}" class="form-control" id="lastname" required/>
-                                <div style="color:#ff0000" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Lastname error</div>
                                 <br>
                                 <label for="age"><b>Age</b></label>
                                 <input th:name="age" th:type="number" th:field="*{age}" class="form-control" id="age"/>
-                                <div style="color:#ff0000" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age error</div>
                                 <br>
                                 <label for="email"><b>Email</b></label>
                                 <input th:name="email" th:type="text" th:field="*{email}" class="form-control" id="email" required/>
-                                <div style="color:#ff0000" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
                                 <br>
                                 <label for="password"><b>Password</b></label>
                                 <input th:name="password" th:field="*{password}" th:type="password" class="form-control"
                                        id="password"/>
-                                <div style="color:#ff0000" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password error</div>
                                 <br>
                                 <label for="new_roles"><b>Role</b></label>
                                 <select multiple class="form-control form-control-sm" id="new_roles" name="new_roles" size="2" required>
