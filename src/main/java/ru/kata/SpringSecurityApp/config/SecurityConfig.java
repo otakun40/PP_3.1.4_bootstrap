@@ -48,23 +48,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
-//                .csrf().disable()
-//                .authorizeRequests()
-//                .antMatchers("/user/**").hasAnyRole("ADMIN", "USER")
-//                .antMatchers("/admin/**").hasRole("ADMIN")
-//                .antMatchers("/").permitAll()
-//                .antMatchers("/registration").permitAll()
-//                .antMatchers("/login").permitAll()
-//                .anyRequest().authenticated()
-//                .and()
-//                .formLogin().successHandler(successUserHandler)
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .permitAll()
-//                .logoutSuccessUrl("/login")
-//                .and().csrf().disable();
-
     }
 
     @Override
